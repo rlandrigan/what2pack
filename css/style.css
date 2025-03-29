@@ -1,0 +1,179 @@
+body {
+  padding: 0 0px;
+}
+body {background-color: #eee;}
+container {background-color: #fff}
+ul.pod {border: 1px solid #999; padding: 0; background-color: rgba(255, 255, 255, 0.1);border-radius: 1em;}
+ul.pod li {display: block;margin: 1em;border-bottom: 1px #fff solid;padding-bottom: 1.5em;}
+h1, h2, h3, h4{margin-bottom: .1em; margin-top: .1em;text-align: left;}
+ul.pod li ul.pod {border: 1px solid #999; padding:1 .5em 1.5em .5em ; background-color: rgba(0, 0, 0, 0.100);border-radius: 1em; margin-top: 1.5em;}
+table td, table th {text-align: center;}
+input[type='submit']{width: 45%; font-size: 1.3em; font-weight: 800;margin-left:auto;margin-right: auto;}
+.print {display:none;}
+.manualCheck {display: none}
+.out {color: #c00;font-size: .8rem;}
+.Needs {color: #e91;font-size: .8rem;}
+.avail, .Ready {color:  rgb(15, 43, 210);
+  font-size: .8rem;
+}
+.note-toolbar, .note-popover .popover-content { 
+  background-color: #444;}
+  
+.badge {
+  height: 2em;
+  width: 2em;
+  font-size: .9em;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  text-align: center;
+  display: inline-flex;
+  background-color:  rgb(0, 152, 35);
+  margin-left:1rem;
+  color: #ffffff;
+  text-decoration: none;
+}
+.badge:hover {
+  color:  rgb(0, 152, 35);
+  background-color: #ffffff;
+  text-decoration: none;
+}
+table {font-size: .9em;}
+:root {
+  --form-control-color: rgb(0, 152, 35);
+  --form-control-disabled: #959495;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+form label {font-weight: 800;}
+
+.form-control {
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.1;
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0.5em;
+  margin: .5em 0;
+ 
+}
+
+.form-control + .form-control {
+  margin-top: 1em;
+}
+
+.form-control--disabled {
+  color: var(--form-control-disabled);
+  cursor: not-allowed;
+}
+h3 svg {margin-bottom :-5px}
+input[type="checkbox"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  /* Remove most all native input styles */
+  appearance: none;
+  /* For iOS < 15 */
+  background-color: var(--form-background);
+  /* Not removed via appearance */
+
+
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 1em;
+  height: 1em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+  /* Windows High Contrast Mode */
+  background-color: CanvasText;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="checkbox"]:focus {
+  outline: max(2px, 0.15em) solid currentColor;
+  outline-offset: max(2px, 0.15em);
+}
+
+input[type="checkbox"]:disabled {
+  --form-control-color: var(--form-control-disabled);
+
+  color: var(--form-control-disabled);
+  cursor: not-allowed;
+}
+.top td:first-child { }
+.second td:first-child{ padding-left:2em;}
+.third td:first-child{ padding-left:4em;}
+
+
+@media (prefers-color-scheme: light)
+{ul.pod { background-color: rgba(0, 0, 0, 0.2)}
+  tbody tr:nth-child(even) {
+background-color: rgba(137, 137, 137, 1);
+background-color: var(--background);
+body {background-color: #eee;}
+container {background-color: #fff}
+}
+.top td { background-color: rgba(0, 0, 0, 0)}
+.second td { background-color: rgba(0, 0, 0, 0.1)}
+.third td { background-color: rgba(0, 0, 0, 0.2)}
+td.firstbar {background-color: #EFEFEF}
+td.secondbar {background-color: rgba(218, 218, 218, 1)}
+
+}
+@media (prefers-color-scheme: dark) {
+
+  tbody tr:nth-child(even) {
+  background-color: rgba(38, 46, 53, 1);
+  background-color: var(--background);
+  
+  }
+  .top td { background-color: rgba(255, 255, 255, 0.05)}
+  .second td { background-color: rgba(255, 255, 255, 0.1)}
+  .third td { background-color: rgba(255, 255, 255, 0.2)}
+  td.firstbar {background-color: rgba(38, 46, 53, 1);}
+  td.secondbar {background-color: rgba(53, 58, 65, 1)}
+
+}
+@media print{
+  body {font-size: .9rem; line-height: .9rem;}
+	h1 {float: left; text-align: left;}
+#qrcode {width: 100px; float: right}
+#signoff {padding-top:1rem; clear:left; float:left; font-size: 1.2rem; font-weight:bold;}
+.print {display: inherit}
+.noprint {display: none;}
+ table { page-break-after:auto }
+table tr    { page-break-inside:avoid; page-break-after:auto }
+table td    { page-break-inside:avoid; page-break-after:auto }
+table thead { display:table-header-group }
+table tfoot { display:table-footer-group }
+  table tbody tr td:before,
+table tbody tr td:after {
+    content: "";
+    height: 4px;
+    display: block;
+}
+.manualCheck {display:block; float:right; width: 5em; height: 2em; border: 1px solid #000; border-radius: 1em;}
+}
