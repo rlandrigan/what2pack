@@ -12,10 +12,7 @@ include('inc/creds.php');
 	 echo "ERROR : ".$e->getMessage();
  }
 
- $DB1_host = 'mysql.where2camp.com';
- $DB1_user = 'w2c_admin';
- $DB1_pass = '00Helena!';
- $DB1_name = 'where2camp';
+
  
   try
   {
