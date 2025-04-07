@@ -1,7 +1,8 @@
 <?php
 include('../inc/creds.php');
 
-$connect = new PDO("mysql:host=$servername;dbname=$db", $username, $password);
+
+$connect = new PDO("mysql:host=$DB_host;dbname=$DB_name", $DB_user, $DB_pass);
 
 $recipe_content = array();
 
